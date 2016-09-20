@@ -23,16 +23,15 @@
 			id: 'wanghuirs.1ecjgmdn'
 		}).addTo(mymap);
 		
-		//ÉèÖÃ±ÈÀı³ß²¢·ÅÖÃÓÚÓÒÉÏ½Ç
+		//è®¾ç½®æ¯”ä¾‹å°ºå¹¶æ”¾ç½®äºå³ä¸Šè§’
 		L.control.scale({position:'topright'}).addTo(mymap);
 		
-		//Ë«»÷µØÍ¼·ÅÖÃÒ»¸ömarker
-		var popup = L.popup();
+		//åŒå‡»åœ°å›¾æ”¾ç½®ä¸€ä¸ªmarker
+		var mymarker = null;
 		function onMapClick(e) {
-			popup
-				.setLatLng(e.latlng)
-				.setContent("lat:"+e.latlng.lat.toFixed(3)+" lng:"+e.latlng.lng.toFixed(3))
-				.openOn(mymap);
+			if(mymarker != null)
+				mymap.removeLayer(mymarker);
+			mymarker = L.marker(e.latlng).addTo(mymap).bindPopup("lat:"+e.latlng.lat.toFixed(3)+" lng:"+e.latlng.lng.toFixed(3)).openPopup();;
 		}
 		mymap.on('dblclick', onMapClick);
 	</script>
