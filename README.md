@@ -1,5 +1,4 @@
 # mymap with leaflet
-* map_homework是我的家庭作业  
 * 地图中心为北京市天安门
 * 地图右上角显示比例尺
 * 地图左上角显示缩放按钮
